@@ -1,0 +1,17 @@
+{
+  "name": "ng-tester",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "../../node_modules/.bin/tsc -p tsconfig.schematics.json",
+    "copy:schemas": "cp --parents schematics/*/schema.json ../../dist/ng-tester/",
+    "copy:files": "cp --parents -p schematics/*/files/** ../../dist/ng-tester/",
+    "copy:collection": "cp schematics/collection.json ../../dist/ng-tester/schematics/collection.json",
+    "postbuild": "npm run copy:schemas && npm run copy:files && npm run copy:collection"
+  },
+  "peerDependencies": {
+    "@angular/common": "^9.0.2",
+    "@angular/core": "^9.0.2",
+    "tslib": "^1.10.0"
+  },
+  "schematics": "./schematics/collection.json"
+}

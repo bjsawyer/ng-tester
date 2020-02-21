@@ -1,0 +1,75 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing'
+import {
+  addProperty,
+  addPropertyAsBehaviorSubject,
+  autoSpyObj,
+  createComponentMock,
+  getAllFunctions,
+  getAllProperties
+} from 'angular-unit-test-helper'
+import { configureTestSuite } from 'ng-bullet'
+
+import { <%= classify(name) %> } from './<%= dasherize(name) %>'
+
+describe('<%= classify(name) %>', () => {
+  let component: <%= classify(name) %>
+  let fakeServiceSpy: jasmine.SpyObj<FakeService>
+
+  beforeEach(() => {
+    fakeServiceSpy = autoSpyObj(FakeService)
+  })
+
+  describe('DOM Tests', () => {
+    let fixture: ComponentFixture<<%= classify(name) %>>
+
+    configureTestSuite(() => {
+      TestBed.configureTestingModule({
+        declarations: [<%= classify(name) %>],
+        imports: [],
+        providers: [
+          { provide: FakeService, useFactory: () => fakeServiceSpy }
+        ],
+      })
+    })
+
+    beforeEach(() => {
+      fakeServiceSpy = TestBed.get(FakeService)
+
+      fixture = TestBed.createComponent(<%= classify(name) %>)
+      component = fixture.componentInstance
+    })
+
+    it('should create', () => {
+      fixture.detectChanges()
+      expect(component).toBeTruthy()
+    })
+
+    it('test goes here', () => {
+      // arrange
+
+
+      // act
+
+
+      // assert
+
+    })
+  })
+
+  describe('Functional Tests', () => {
+    beforeEach(() => {
+      component = new <%= classify(name) %>(fakeServiceSpy)
+    })
+
+    it('test goes here', () => {
+      // arrange
+
+
+      // act
+
+
+      // assert
+
+    })
+  }
+})

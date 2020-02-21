@@ -44,3 +44,9 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+.env
+
+
+/src/**/*.js
+/src/**/*.js.map
+/src/**/*.d.ts

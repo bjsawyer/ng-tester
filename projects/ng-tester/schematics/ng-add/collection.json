@@ -1,0 +1,14 @@
+{
+  "$schema": "../../../../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "ng-add": {
+      "description": "Add my library to the project.",
+      "factory": "./ng-add/index#ngAdd"
+    },
+    "unit": {
+      "description": "Generate a unit test file.",
+      "factory": "./unit/index#unit",
+      "schema": "./unit/schema.json"
+    }
+  }
+}

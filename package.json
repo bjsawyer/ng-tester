@@ -6,8 +6,12 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "lint": "tslint --config tslint.json --project . -e \"**/{test,polyfills}.ts\"",
+    "e2e": "ng e2e",
+    "style": "import-sort -l \"{src,tests,e2e}/**/*.ts\" && prettier --check \"{src,tests,e2e}/**/*.{*css,ts}\"",
+    "style:fix": "import-sort --write \"{src,tests,e2e}/**/*.ts\" && prettier --write \"{src,tests,e2e}/**/*.{*css,ts}\" && js-beautify \"src/**/*.html\"",
+    "lint:fix": "tslint --config tslint.json --fix --project . -e \"**/{test,polyfills}.ts\"",
+    "init:env": "init-dev-env generate-dot-env example.env -f"
   },
   "private": true,
   "dependencies": {
@@ -24,23 +28,48 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "~0.900.3",
+    "@angular-devkit/build-ng-packagr": "~0.900.3",
     "@angular/cli": "~9.0.3",
     "@angular/compiler-cli": "~9.0.2",
     "@angular/language-service": "~9.0.2",
-    "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
+    "angular-unit-test-helper": "^1.4.1",
     "codelyzer": "^5.1.2",
+    "cross-conf-env": "^1.1.2",
+    "dev-norms": "^1.7.0",
+    "import-sort": "^6.0.0",
+    "import-sort-cli": "^6.0.0",
+    "import-sort-parser-typescript": "^6.0.0",
+    "import-sort-style-module": "^6.0.0",
+    "init-dev-env": "^1.0.0",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
+    "js-beautify": "^1.10.3",
     "karma": "~4.3.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage-istanbul-reporter": "~2.1.0",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
+    "ng-packagr": "^9.0.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.19.1",
     "protractor": "~5.4.3",
+    "rimraf": "^3.0.2",
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-etc": "^1.10.0",
+    "tslint-plugin-prettier": "^2.1.0",
     "typescript": "~3.7.5"
+  },
+  "importSort": {
+    ".ts, .tsx": {
+      "parser": "typescript",
+      "style": "module",
+      "options": {}
+    }
   }
 }
