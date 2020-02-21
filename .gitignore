@@ -47,6 +47,6 @@ Thumbs.db
 .env
 
 
-/src/**/*.js
-/src/**/*.js.map
-/src/**/*.d.ts
+projects/**/*.js
+projects/**/*.js.map
+projects/**/*.d.ts
