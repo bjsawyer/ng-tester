@@ -19,14 +19,18 @@ export function unit(options: Schema): Rule {
     if (!workspaceConfig) {
       throw new SchematicsException('Could not find Angular workspace configuration')
     }
+
     const workspaceContent = workspaceConfig.toString()
     const workspace: experimental.workspace.WorkspaceSchema = JSON.parse(workspaceContent)
+
     const projectName = options.project as string
     const project = workspace.projects[projectName]
     const projectType = project.projectType === 'application' ? 'app' : 'lib'
+
     if (options.path === undefined) {
       options.path = `${project.sourceRoot}/${projectType}`
     }
+
     const templateSource = apply(url('./files'), [
       applyTemplates({
         classify: strings.classify,
@@ -35,6 +39,7 @@ export function unit(options: Schema): Rule {
       }),
       move(normalize(options.path as string)),
     ])
+
     return chain([mergeWith(templateSource)])
   }
 }

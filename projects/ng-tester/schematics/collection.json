@@ -7,8 +7,8 @@
     },
     "unit": {
       "description": "Generate a unit test file.",
-      "factory": "./ng-add/unit/index#unit",
-      "schema": "./ng-add/unit/schema.json"
+      "factory": "./unit/index#unit",
+      "schema": "./unit/schema.json"
     }
   }
 }
