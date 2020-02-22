@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
 @Component({
   selector: 'lib-ng-tester',
@@ -7,13 +7,10 @@ import { Component, OnInit } from '@angular/core';
       ng-tester works!
     </p>
   `,
-  styles: []
+  styles: [],
 })
 export class NgTesterComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

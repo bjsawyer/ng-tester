@@ -12,10 +12,9 @@
     "test": "ng test",
     "lint": "tslint --config tslint.json --project . -e \"**/{test,polyfills}.ts\"",
     "e2e": "ng e2e",
-    "style": "import-sort -l \"{src,tests,e2e}/**/*.ts\" && prettier --check \"{src,tests,e2e}/**/*.{*css,ts}\"",
-    "style:fix": "import-sort --write \"{src,tests,e2e}/**/*.ts\" && prettier --write \"{src,tests,e2e}/**/*.{*css,ts}\" && js-beautify \"src/**/*.html\"",
-    "lint:fix": "tslint --config tslint.json --fix --project . -e \"**/{test,polyfills}.ts\"",
-    "init:env": "init-dev-env generate-dot-env example.env -f"
+    "style": "import-sort -l \"projects/**/*.ts\" && prettier --check \"projects/**/*.{*css,ts}\"",
+    "style:fix": "import-sort --write \"projects/**/*.ts\" && prettier --write \"projects/**/*.{*css,ts}\" && js-beautify \"src/**/*.html\"",
+    "lint:fix": "tslint --config tslint.json --fix --project . -e \"**/{test,polyfills}.ts\""
   },
   "private": true,
   "dependencies": {
@@ -48,7 +47,6 @@
     "import-sort-cli": "^6.0.0",
     "import-sort-parser-typescript": "^6.0.0",
     "import-sort-style-module": "^6.0.0",
-    "init-dev-env": "^1.0.0",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "js-beautify": "^1.10.3",
