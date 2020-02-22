@@ -2,6 +2,13 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
 
+## Testing "Unit" Schematic Locally
+
+1. cd into `projects/ng-tester`
+2. Run `npm run build`
+3. Run `npm link ../../dist/ng-tester`
+4. In whichever project/directory you'd like to generate your spec file, run `ng generate ng-tester:unit`
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
