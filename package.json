@@ -1,6 +1,6 @@
 {
   "name": "ng-tester",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -39,7 +39,6 @@
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
-    "angular-unit-test-helper": "^1.4.1",
     "codelyzer": "^5.1.2",
     "cross-conf-env": "^1.1.2",
     "dev-norms": "^1.7.0",
