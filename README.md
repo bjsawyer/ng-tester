@@ -1,4 +1,4 @@
-# ng-tester
+# ng-tester ![npm](https://img.shields.io/npm/v/ng-tester)
 
 `ng-tester` is an Angular library designed to create structured, opionated spec files for components. It incorporates [angular-unit-test-helper](https://www.npmjs.com/package/angular-unit-test-helper) to assist with mocking and [ng-bullet](https://www.npmjs.com/package/ng-bullet) to optimize TestBed speed.
 
