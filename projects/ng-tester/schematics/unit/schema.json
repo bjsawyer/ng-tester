@@ -7,7 +7,7 @@
     "name": {
       "type": "string",
       "description": "The name of the component for which the spec file will be created.",
-      "x-prompt": "Which component are you testing (i.e. \"AppComponent\")?"
+      "x-prompt": "Which component are you testing (i.e. \"App\" if you're testing app.component.ts)?"
     },
     "path": {
       "type": "string",

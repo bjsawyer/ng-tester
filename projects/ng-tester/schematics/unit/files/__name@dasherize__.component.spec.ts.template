@@ -9,13 +9,15 @@ import {
 } from 'angular-unit-test-helper'
 import { configureTestSuite } from 'ng-bullet'
 
-import { <%= classify(name) %> } from './<%= dasherize(name) %>'
+import { <%= classify(name) %> } from './<%= dasherize(name) %>.component.ts'
 
 describe('<%= classify(name) %>', () => {
   let component: <%= classify(name) %>
+  // Declare service mocks
   let fakeServiceSpy: jasmine.SpyObj<FakeService>
 
   beforeEach(() => {
+    // Initialize mocked services from actual services
     fakeServiceSpy = autoSpyObj(FakeService)
   })
 
@@ -27,12 +29,14 @@ describe('<%= classify(name) %>', () => {
         declarations: [<%= classify(name) %>],
         imports: [],
         providers: [
+          // Inject mocked services into TestBed
           { provide: FakeService, useFactory: () => fakeServiceSpy }
         ],
       })
     })
 
     beforeEach(() => {
+      // Get injected services from TestBed
       fakeServiceSpy = TestBed.get(FakeService)
 
       fixture = TestBed.createComponent(<%= classify(name) %>)
@@ -58,6 +62,7 @@ describe('<%= classify(name) %>', () => {
 
   describe('Functional Tests', () => {
     beforeEach(() => {
+      // Create component instance with mocked services
       component = new <%= classify(name) %>(fakeServiceSpy)
     })
 
