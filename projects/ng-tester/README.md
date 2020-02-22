@@ -1,24 +1,16 @@
-# NgTester
+# ng-tester
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
 
-## Code scaffolding
+## Usage
 
-Run `ng generate component component-name --project ng-tester` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ng-tester`.
-> Note: Don't forget to add `--project ng-tester` or else it will be added to the default project in your `angular.json` file. 
+1. Run `npm install ng-tester`
+2. Navigate to project/directory you'd like to generate spec file
+3. Run `ng generate ng-tester:unit`
 
-## Build
+## Testing "Unit" Schematic Locally
 
-Run `ng build ng-tester` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Publishing
-
-After building your library with `ng build ng-tester`, go to the dist folder `cd dist/ng-tester` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test ng-tester` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+1. Run `npm run build`
+2. Run `npm link dist/ng-tester`
+3. Navigate to project/directory you'd like to generate spec file
+4. Run `ng generate ng-tester:unit`

@@ -4,7 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "prebuild": "cp README.md projects/ng-tester",
     "build": "ng build",
+    "postbuild": "npm run build --prefix projects/ng-tester",
+    "package": "npm run build && npm run pack",
+    "pack": "cd dist/ng-tester && npm pack",
     "test": "ng test",
     "lint": "tslint --config tslint.json --project . -e \"**/{test,polyfills}.ts\"",
     "e2e": "ng e2e",

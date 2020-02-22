@@ -2,11 +2,10 @@
   "name": "ng-tester",
   "version": "0.0.1",
   "scripts": {
-    "copy:unit": "cp -R schematics/unit ../../dist/ng-tester/schematics",
-    "copy:collection": "cp schematics/collection.json ../../dist/ng-tester/schematics/collection.json",
-    "prebuild": "cd ../.. && ng build ng-tester && cd projects/ng-tester",
     "build": "../../node_modules/.bin/tsc -p tsconfig.schematics.json",
-    "postbuild": "npm run copy:unit && npm run copy:collection"
+    "postbuild": "npm run copy:unit && npm run copy:collection",
+    "copy:unit": "cp -R schematics/unit ../../dist/ng-tester/schematics",
+    "copy:collection": "cp schematics/collection.json ../../dist/ng-tester/schematics/collection.json"
   },
   "peerDependencies": {
     "@angular/common": "^9.0.2",

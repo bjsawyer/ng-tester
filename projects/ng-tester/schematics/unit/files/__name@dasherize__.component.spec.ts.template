@@ -9,10 +9,10 @@ import {
 } from 'angular-unit-test-helper'
 import { configureTestSuite } from 'ng-bullet'
 
-import { <%= classify(name) %> } from './<%= dasherize(name) %>.component.ts'
+import { <%= classify(name) %>Component } from './<%= dasherize(name) %>.component'
 
-describe('<%= classify(name) %>', () => {
-  let component: <%= classify(name) %>
+describe('<%= classify(name) %>Component', () => {
+  let component: <%= classify(name) %>Component
   // Declare service mocks
   let fakeServiceSpy: jasmine.SpyObj<FakeService>
 
@@ -22,11 +22,11 @@ describe('<%= classify(name) %>', () => {
   })
 
   describe('DOM Tests', () => {
-    let fixture: ComponentFixture<<%= classify(name) %>>
+    let fixture: ComponentFixture<<%= classify(name) %>Component>
 
     configureTestSuite(() => {
       TestBed.configureTestingModule({
-        declarations: [<%= classify(name) %>],
+        declarations: [<%= classify(name) %>Component],
         imports: [],
         providers: [
           // Inject mocked services into TestBed
@@ -39,7 +39,7 @@ describe('<%= classify(name) %>', () => {
       // Get injected services from TestBed
       fakeServiceSpy = TestBed.get(FakeService)
 
-      fixture = TestBed.createComponent(<%= classify(name) %>)
+      fixture = TestBed.createComponent(<%= classify(name) %>Component)
       component = fixture.componentInstance
     })
 
@@ -63,7 +63,7 @@ describe('<%= classify(name) %>', () => {
   describe('Functional Tests', () => {
     beforeEach(() => {
       // Create component instance with mocked services
-      component = new <%= classify(name) %>(fakeServiceSpy)
+      component = new <%= classify(name) %>Component(fakeServiceSpy)
     })
 
     it('test goes here', () => {
