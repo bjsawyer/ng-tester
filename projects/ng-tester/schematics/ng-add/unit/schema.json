@@ -6,7 +6,8 @@
   "properties": {
     "name": {
       "type": "string",
-      "description": "The name of the component for which the spec file will be created."
+      "description": "The name of the component for which the spec file will be created.",
+      "x-prompt": "Which component are you testing (i.e. \"AppComponent\")?"
     },
     "path": {
       "type": "string",
