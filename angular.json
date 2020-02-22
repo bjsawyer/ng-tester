@@ -36,13 +36,12 @@
               "projects/ng-tester/tsconfig.lib.json",
               "projects/ng-tester/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
-    }},
+    }
+  },
   "cli": {
     "analytics": false
   },

@@ -13,7 +13,7 @@
     "lint": "tslint --config tslint.json --project . -e \"**/{test,polyfills}.ts\"",
     "e2e": "ng e2e",
     "style": "import-sort -l \"projects/**/*.ts\" && prettier --check \"projects/**/*.{*css,ts}\"",
-    "style:fix": "import-sort --write \"projects/**/*.ts\" && prettier --write \"projects/**/*.{*css,ts}\" && js-beautify \"src/**/*.html\"",
+    "style:fix": "import-sort --write \"projects/**/*.ts\" && prettier --write \"**/*.{*css,ts,json}\" && js-beautify \"projects/**/*.html\"",
     "lint:fix": "tslint --config tslint.json --fix --project . -e \"**/{test,polyfills}.ts\""
   },
   "private": true,
