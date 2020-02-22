@@ -1,6 +1,18 @@
 {
   "name": "ng-tester",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "description": "A library containing structured, opinionated Angular testing schematics.",
+  "keywords": [
+    "Angular",
+    "Schematics",
+    "Unit",
+    "Testing"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bjsawyer/ng-tester"
+  },
+  "license": "SEE LICENSE IN LICENSE.txt",
   "scripts": {
     "build": "../../node_modules/.bin/tsc -p tsconfig.schematics.json",
     "postbuild": "npm run copy:unit && npm run copy:collection",
