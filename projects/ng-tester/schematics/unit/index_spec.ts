@@ -3,13 +3,25 @@ import * as path from 'path'
 import { Tree } from '@angular-devkit/schematics'
 import { SchematicTestRunner } from '@angular-devkit/schematics/testing'
 
-const collectionPath = path.join(__dirname, '../collection.json')
+describe('unit tests', () => {
+  const collectionPath = path.join(__dirname, '../collection.json')
+  let runner: SchematicTestRunner
 
-describe('unit-test', () => {
-  it('works', () => {
-    const runner = new SchematicTestRunner('schematics', collectionPath)
-    const tree = runner.runSchematic('unit-test', {}, Tree.empty())
+  beforeEach(() => {
+    runner = new SchematicTestRunner('schematics', collectionPath)
+  })
 
-    expect(tree.files).toEqual([])
+  it(`doesn't generate spec file, given no "name" param`, done => {
+    runner.runSchematicAsync('unit', {}, Tree.empty()).subscribe(tree => {
+      expect(tree.files).toEqual([])
+      done()
+    })
+  })
+
+  it(`does generate spec file, given "name" param`, done => {
+    runner.runSchematicAsync('unit', { name: 'test' }, Tree.empty()).subscribe(tree => {
+      expect(tree.files).toEqual([])
+      done()
+    })
   })
 })
