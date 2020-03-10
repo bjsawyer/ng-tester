@@ -24,7 +24,7 @@ Each spec file is created with two subsections:
 
 ## Output
 
-```angular
+```ts
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 import {
   addProperty,
