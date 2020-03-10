@@ -18,7 +18,7 @@ Each spec file is created with two subsections:
 
 ## Usage
 
-1. Run `npm install ng-tester`
+1. Run `npm install -D ng-tester`
 2. Navigate to project/directory you'd like to generate spec file
 3. Run `ng generate ng-tester:unit`
 

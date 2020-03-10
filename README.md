@@ -18,9 +18,94 @@ Each spec file is created with two subsections:
 
 ## Usage
 
-1. Run `npm install ng-tester`
+1. Run `npm install -D ng-tester`
 2. Navigate to project/directory you'd like to generate spec file
 3. Run `ng generate ng-tester:unit`
+
+## Output
+
+```angular
+import { ComponentFixture, TestBed } from '@angular/core/testing'
+import {
+  addProperty,
+  addPropertyAsBehaviorSubject,
+  autoSpyObj,
+  createComponentMock,
+  getAllFunctions,
+  getAllProperties
+} from 'angular-unit-test-helper'
+import { configureTestSuite } from 'ng-bullet'
+
+import { TestComponent } from './test.component'
+
+describe('TestComponent', () => {
+  let component: TestComponent
+  // Declare service mocks
+  let fakeServiceSpy: jasmine.SpyObj<FakeService>
+
+  beforeEach(() => {
+    // Initialize mocked services from actual services
+    fakeServiceSpy = autoSpyObj(FakeService)
+  })
+
+  describe('DOM Tests', () => {
+    let fixture: ComponentFixture<TestComponent>
+
+    configureTestSuite(() => {
+      TestBed.configureTestingModule({
+        declarations: [TestComponent],
+        imports: [],
+        providers: [
+          // Inject mocked services into TestBed
+          { provide: FakeService, useFactory: () => fakeServiceSpy }
+        ],
+      })
+    })
+
+    beforeEach(() => {
+      // Get injected services from TestBed
+      fakeServiceSpy = TestBed.get(FakeService)
+
+      fixture = TestBed.createComponent(TestComponent)
+      component = fixture.componentInstance
+    })
+
+    it('should create', () => {
+      fixture.detectChanges()
+      expect(component).toBeTruthy()
+    })
+
+    it('test goes here', () => {
+      // arrange
+
+
+      // act
+
+
+      // assert
+
+    })
+  })
+
+  describe('Functional Tests', () => {
+    beforeEach(() => {
+      // Create component instance with mocked services
+      component = new TestComponent(fakeServiceSpy)
+    })
+
+    it('test goes here', () => {
+      // arrange
+
+
+      // act
+
+
+      // assert
+
+    })
+  }
+})
+```
 
 ## Peer Dependencies
 
