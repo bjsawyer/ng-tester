@@ -14,11 +14,17 @@
   },
   "license": "SEE LICENSE IN LICENSE.txt",
   "scripts": {
-    "build": "../../node_modules/.bin/tsc -p tsconfig.schematics.json",
+    "build": "npx tsc -p tsconfig.schematics.json",
     "postbuild": "npm run copy:unit && npm run copy:collection",
-    "copy:unit": "cp -R schematics/unit ../../dist/ng-tester/schematics",
-    "copy:collection": "cp schematics/collection.json ../../dist/ng-tester/schematics/collection.json",
-    "test": "npm run build && ../../node_modules/.bin/jasmine **/*_spec.js"
+    "copy:unit": "copyfiles schematics/unit ../../dist/ng-tester/schematics",
+    "copy:collection": "copyfiles schematics/collection.json ../../dist/ng-tester/schematics/collection.json",
+    "test": "npm run build && npx jasmine **/*_spec.js"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.2.0",
+    "jasmine-core": "~3.5.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "typescript": "~3.7.5"
   },
   "peerDependencies": {
     "@angular/common": "^9.0.2",

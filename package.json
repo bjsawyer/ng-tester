@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "prebuild": "cp README.md projects/ng-tester",
+    "prebuild": "copyfiles README.md projects/ng-tester",
     "build": "ng build --prod && npm run build:schematics",
     "build:schematics": "npm run build --prefix projects/ng-tester",
     "package": "npm run build && npm run pack",
@@ -41,6 +41,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
+    "copyfiles": "^2.2.0",
     "cross-conf-env": "^1.1.2",
     "dev-norms": "^1.7.0",
     "import-sort": "^6.0.0",
