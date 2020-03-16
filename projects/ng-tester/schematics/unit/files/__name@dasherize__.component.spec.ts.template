@@ -5,9 +5,10 @@ import {
   autoSpyObj,
   createComponentMock,
   getAllFunctions,
-  getAllProperties
+  getAllProperties,
+  injectClass,
+  injectSpy
 } from 'angular-unit-test-helper'
-import { configureTestSuite } from 'ng-bullet'
 
 import { <%= classify(name) %>Component } from './<%= dasherize(name) %>.component'
 
@@ -24,20 +25,20 @@ describe('<%= classify(name) %>Component', () => {
   describe('DOM Tests', () => {
     let fixture: ComponentFixture<<%= classify(name) %>Component>
 
-    configureTestSuite(() => {
+    beforeEach(async(() => {
       TestBed.configureTestingModule({
         declarations: [<%= classify(name) %>Component],
         imports: [],
         providers: [
           // Inject mocked services into TestBed
-          { provide: FakeService, useFactory: () => fakeServiceSpy }
+          { provide: FakeService, useValue: fakeServiceSpy }
         ],
-      })
-    })
+      }).compileComponents()
+    }))
 
     beforeEach(() => {
-      // Get injected services from TestBed
-      fakeServiceSpy = TestBed.get(FakeService)
+      // Get injected dependencies from TestBed
+      fakeServiceSpy = injectSpy(FakeService)
 
       fixture = TestBed.createComponent(<%= classify(name) %>Component)
       component = fixture.componentInstance

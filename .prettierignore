@@ -1,3 +1,4 @@
 **/*.html
 dist/
 README.md
+**/*.ts.template

@@ -1,6 +1,6 @@
 {
   "name": "ng-tester",
-  "version": "1.0.3",
+  "version": "9.0.0",
   "description": "A library containing structured, opinionated Angular testing schematics.",
   "keywords": [
     "Angular",
@@ -27,11 +27,10 @@
     "typescript": "~3.7.5"
   },
   "peerDependencies": {
-    "@angular/common": "^9.0.2",
-    "@angular/core": "^9.0.2",
-    "angular-unit-test-helper": "^1.4.1",
-    "ng-bullet": "^1.0.3",
-    "tslib": "^1.10.0"
+    "@angular/common": ">= 9.0.0",
+    "@angular/core": ">= 9.0.0",
+    "angular-unit-test-helper": ">= 9.3.0",
+    "tslib": ">= 1.10.0"
   },
   "schematics": "./schematics/collection.json"
 }
