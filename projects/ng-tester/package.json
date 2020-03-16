@@ -15,9 +15,10 @@
   "license": "SEE LICENSE IN LICENSE.txt",
   "scripts": {
     "build": "npx tsc -p tsconfig.schematics.json",
-    "postbuild": "npm run copy:unit && npm run copy:collection",
-    "copy:unit": "copyfiles schematics/unit ../../dist/ng-tester/schematics",
-    "copy:collection": "copyfiles schematics/collection.json ../../dist/ng-tester/schematics/collection.json",
+    "postbuild": "npm run copy:collection && npm run copy:unit:schema && npm run copy:unit:files",
+    "copy:collection": "copyfiles -f ./schematics/collection.json ../../dist/ng-tester/schematics/",
+    "copy:unit:schema": "copyfiles -f ./schematics/unit/schema.json ../../dist/ng-tester/schematics/unit/",
+    "copy:unit:files": "copyfiles -u 1 -f ./schematics/unit/files/* ../../dist/ng-tester/schematics/unit/files",
     "test": "npm run build && npx jasmine **/*_spec.js"
   },
   "devDependencies": {

@@ -1,6 +1,6 @@
 # ng-tester ![npm](https://img.shields.io/npm/v/ng-tester)
 
-`ng-tester` is an Angular library designed to create structured, opionated spec files for components. It incorporates [angular-unit-test-helper](https://www.npmjs.com/package/angular-unit-test-helper) to assist with mocking and [ng-bullet](https://www.npmjs.com/package/ng-bullet) to optimize TestBed speed.
+`ng-tester` is an Angular library designed to create structured, opionated spec files for components. It incorporates [angular-unit-test-helper](https://www.npmjs.com/package/angular-unit-test-helper) to assist with mocking.
 
 Each spec file is created with two subsections:
 
@@ -8,7 +8,7 @@ Each spec file is created with two subsections:
 
 - Contains Angular TestBed
 - Designed for tests that check state changes (i.e. `fixture.detectChanges()`) or require DOM access (i.e. testing UI elements)
-- Runs slower than functional tests, but thanks to `ng-bullet`, the DOM only recompiles once per **component** (rather than the default TestBed behavior of once per **test**)
+- Runs slower than functional tests (however [as of Angular v9](https://blog.angular.io/version-9-of-angular-now-available-project-ivy-has-arrived-23c97b63cfa3), components are no longer recompiled for each test, significantly improving test run speed from previous Angular versions)
 
 ### "Functional Tests"
 
