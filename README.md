@@ -1,4 +1,4 @@
-# ng-tester ![npm](https://img.shields.io/npm/v/ng-tester)
+# ng-tester [![npm version](https://badge.fury.io/js/ng-tester.svg)](https://badge.fury.io/js/ng-tester)
 
 `ng-tester` is an Angular library designed to create structured, opionated spec files for components. It incorporates [angular-unit-test-helper](https://www.npmjs.com/package/angular-unit-test-helper) to assist with mocking.
 
